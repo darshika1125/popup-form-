@@ -7,16 +7,58 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="btnOpenForm">consultant</button>
-    <div id="popupForm" class="popup">
-         <form id="consultForm">
-      <h2>Consultation Form</h2>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <button type="submit">Submit</button>
-      <button type="button" id="closeForm">Close</button>
-    </form>
-    </div>
+     <form id="brandForm" action="https://formspree.io/f/your-form-id" method="POST">
+    <h2>Brand Booking Form</h2>
+
+    <label>Name*</label>
+    <input type="text" name="name" required>
+
+    <label>Brand Name*</label>
+    <input type="text" name="brand_name" required>
+
+    <label>Website (if any)*</label>
+    <input type="url" name="website" required>
+
+    <label>Services*</label>
+    <select name="services" required>
+      <option value="">-- Select a Service --</option>
+      <option value="Brand Consultation">Brand Consultation</option>
+      <option value="Brand Auditing">Brand Auditing</option>
+      <option value="Brand Strategy">Brand Strategy</option>
+    </select>
+
+    <label>Book Your Slot - Day*</label>
+    <select name="day" required>
+      <option value="">-- Select Day --</option>
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+    </select>
+
+    <label>Book Your Slot - Time (11 AM to 7 PM)*</label>
+    <select name="time" required>
+      <option value="">-- Select Time --</option>
+      <option value="11:00 AM">11:00 AM</option>
+      <option value="12:00 PM">12:00 PM</option>
+      <option value="1:00 PM">1:00 PM</option>
+      <option value="2:00 PM">2:00 PM</option>
+      <option value="3:00 PM">3:00 PM</option>
+      <option value="4:00 PM">4:00 PM</option>
+      <option value="5:00 PM">5:00 PM</option>
+      <option value="6:00 PM">6:00 PM</option>
+      <option value="7:00 PM">7:00 PM</option>
+    </select>
+
+    <label>Contact Details*</label>
+    <input type="text" name="contact" required>
+
+    <p class="error" id="errorMsg">Please fill out all fields before submitting.</p>
+
+    <button type="submit">Submit</button>
+  </form>
     <script src="script.js"></script>
 </body>
 </html>
