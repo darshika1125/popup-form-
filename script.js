@@ -1,8 +1,18 @@
-document.getElementById("btnOpenForm").addEventListener("click", () => {
-  document.getElementById("popupForm").style.display = "block";
-});
+document.getElementById("brandForm").addEventListener("submit", function (e) {
+      const form = e.target;
+      const errorMsg = document.getElementById("errorMsg");
+      let isValid = true;
 
-document.getElementById("closeForm").addEventListener("click", () => {
-  document.getElementById("popupForm").style.display = "none";
-});
+      [...form.elements].forEach((el) => {
+        if (el.required && !el.value.trim()) {
+          isValid = false;
+        }
+      });
 
+      if (!isValid) {
+        e.preventDefault();
+        errorMsg.style.display = "block";
+      } else {
+        errorMsg.style.display = "none";
+      }
+    });
